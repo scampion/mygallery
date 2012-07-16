@@ -4,17 +4,17 @@ src=${src:-src}
 
 mkdir thumbs pics originals
 
-# for i in $src/*; 
-# do 
-#     echo "Copy and rename image : $i" 
-#     datetime=`identify -verbose "$i" | grep "exif:DateTime:" | awk -F\\  '{print $2"_"$3}' | sed s/:/_/g`
-#     mv $i originals/$datetime-`basename $i`
-# done ; 
+for i in $src/*; 
+do 
+    echo "Copy and rename image : $i" 
+    datetime=`identify -verbose "$i" | grep "exif:DateTime:" | awk -F\\  '{print $2"_"$3}' | sed s/:/_/g`
+    mv $i originals/$datetime-`basename $i`
+done ; 
 
-# echo "Generating thumbnail, please wait"
-# mogrify  -format gif -path thumbs/  -thumbnail 75x75^ -gravity center -extent 75x75 -auto-orient  originals/* 
-# echo "Generating pics, please wait"
-# mogrify  -strip -resize 500x500 -auto-orient -path pics originals/*
+echo "Generating thumbnail, please wait"
+mogrify  -format gif -path thumbs/  -thumbnail 75x75^ -gravity center -extent 75x75 -auto-orient  originals/* 
+echo "Generating pics, please wait"
+mogrify  -strip -resize 500x500 -auto-orient -path pics originals/*
 
 cat > index.html <<'EOF'
 <html>
