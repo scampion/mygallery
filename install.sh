@@ -8,7 +8,7 @@ for i in $src/*;
 do 
     echo "Copy and rename image : $i" 
     datetime=`identify -verbose "$i" | grep "exif:DateTime:" | awk -F\\  '{print $2"_"$3}' | sed s/:/_/g`
-    mv $i originals/$datetime-`basename $i`
+    cp $i originals/$datetime-`basename $i`
 done ; 
 
 echo "Generating thumbnail, please wait"
