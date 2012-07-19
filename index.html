@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Glenans - Avril 2012</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="description" content="Responsive Image Gallery with jQuery" />
+    <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+    <noscript>
+      <style>
+	.es-carousel ul{
+	display:block;
+	}
+      </style>
+    </noscript>
+    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+      <div class="rg-image-wrapper">
+	{{if itemsCount > 1}}
+	<div class="rg-image-nav">
+	  <a href="#" class="rg-image-nav-prev">Previous Image</a>
+	  <a href="#" class="rg-image-nav-next">Next Image</a>
+	</div>
+	{{/if}}
+	<div class="rg-image"></div>
+	<div class="rg-loading"></div>
+	<div class="rg-caption-wrapper">
+	  <div class="rg-caption" style="display:none;">
+	    <p></p>
+	  </div>
+	  <div class="rg-download"></div>
+	</div>
+      </div>
+    </script>
+  </head>
+
+
+  <body>
+    <div class="container">
+      <div class="header">
+      </div><!-- header -->
+      
+      <div class="content">
+	<h1>Glenans - Avril 2012</h1>
+	<div id="rg-gallery" class="rg-gallery">
+	  <div class="rg-thumbs">
+	    <!-- Elastislide Carousel Thumbnail Viewer -->
+	    <div class="es-carousel-wrapper">
+	      <div class="es-nav">
+		<span class="es-nav-prev">Previous</span>
+		<span class="es-nav-next">Next</span>
+	      </div>
+	      <div class="es-carousel">
+		<ul>
+<li><a href="#"><img src="thumbs/2012_04_15_09_03_29-img_20120415_090329.gif" data-large="pics/2012_04_15_09_03_29-img_20120415_090329.jpg" data-original="originals/2012_04_15_09_03_29-img_20120415_090329.jpg" alt="2012_04_15_09_03_29-img_20120415_090329.jpg" data-description="2012_04_15_09_03_29-img_20120415_090329.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_15_09_16_50-img_20120415_091650.gif" data-large="pics/2012_04_15_09_16_50-img_20120415_091650.jpg" data-original="originals/2012_04_15_09_16_50-img_20120415_091650.jpg" alt="2012_04_15_09_16_50-img_20120415_091650.jpg" data-description="2012_04_15_09_16_50-img_20120415_091650.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_15_12_30_18-img_20120415_123018.gif" data-large="pics/2012_04_15_12_30_18-img_20120415_123018.jpg" data-original="originals/2012_04_15_12_30_18-img_20120415_123018.jpg" alt="2012_04_15_12_30_18-img_20120415_123018.jpg" data-description="2012_04_15_12_30_18-img_20120415_123018.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_15_12_53_23-img_20120415_125323.gif" data-large="pics/2012_04_15_12_53_23-img_20120415_125323.jpg" data-original="originals/2012_04_15_12_53_23-img_20120415_125323.jpg" alt="2012_04_15_12_53_23-img_20120415_125323.jpg" data-description="2012_04_15_12_53_23-img_20120415_125323.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_15_17_23_20-img_20120415_172321.gif" data-large="pics/2012_04_15_17_23_20-img_20120415_172321.jpg" data-original="originals/2012_04_15_17_23_20-img_20120415_172321.jpg" alt="2012_04_15_17_23_20-img_20120415_172321.jpg" data-description="2012_04_15_17_23_20-img_20120415_172321.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_15_18_22_55-img_20120415_182255.gif" data-large="pics/2012_04_15_18_22_55-img_20120415_182255.jpg" data-original="originals/2012_04_15_18_22_55-img_20120415_182255.jpg" alt="2012_04_15_18_22_55-img_20120415_182255.jpg" data-description="2012_04_15_18_22_55-img_20120415_182255.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_16_10_02_40-img_20120416_100240.gif" data-large="pics/2012_04_16_10_02_40-img_20120416_100240.jpg" data-original="originals/2012_04_16_10_02_40-img_20120416_100240.jpg" alt="2012_04_16_10_02_40-img_20120416_100240.jpg" data-description="2012_04_16_10_02_40-img_20120416_100240.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_16_10_58_21-20120416_105822.gif" data-large="pics/2012_04_16_10_58_21-20120416_105822.jpg" data-original="originals/2012_04_16_10_58_21-20120416_105822.jpg" alt="2012_04_16_10_58_21-20120416_105822.jpg" data-description="2012_04_16_10_58_21-20120416_105822.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_16_12_14_11-img_20120416_121412.gif" data-large="pics/2012_04_16_12_14_11-img_20120416_121412.jpg" data-original="originals/2012_04_16_12_14_11-img_20120416_121412.jpg" alt="2012_04_16_12_14_11-img_20120416_121412.jpg" data-description="2012_04_16_12_14_11-img_20120416_121412.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_16_12_17_22-img_20120416_121722.gif" data-large="pics/2012_04_16_12_17_22-img_20120416_121722.jpg" data-original="originals/2012_04_16_12_17_22-img_20120416_121722.jpg" alt="2012_04_16_12_17_22-img_20120416_121722.jpg" data-description="2012_04_16_12_17_22-img_20120416_121722.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_17_16_44_54-img_20120417_164455.gif" data-large="pics/2012_04_17_16_44_54-img_20120417_164455.jpg" data-original="originals/2012_04_17_16_44_54-img_20120417_164455.jpg" alt="2012_04_17_16_44_54-img_20120417_164455.jpg" data-description="2012_04_17_16_44_54-img_20120417_164455.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_17_17_07_45-img_20120417_170746.gif" data-large="pics/2012_04_17_17_07_45-img_20120417_170746.jpg" data-original="originals/2012_04_17_17_07_45-img_20120417_170746.jpg" alt="2012_04_17_17_07_45-img_20120417_170746.jpg" data-description="2012_04_17_17_07_45-img_20120417_170746.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_17_17_56_53-img_20120417_175653.gif" data-large="pics/2012_04_17_17_56_53-img_20120417_175653.jpg" data-original="originals/2012_04_17_17_56_53-img_20120417_175653.jpg" alt="2012_04_17_17_56_53-img_20120417_175653.jpg" data-description="2012_04_17_17_56_53-img_20120417_175653.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_18_10_21_34-img_20120418_102134.gif" data-large="pics/2012_04_18_10_21_34-img_20120418_102134.jpg" data-original="originals/2012_04_18_10_21_34-img_20120418_102134.jpg" alt="2012_04_18_10_21_34-img_20120418_102134.jpg" data-description="2012_04_18_10_21_34-img_20120418_102134.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_18_14_29_44-20120418_142944.gif" data-large="pics/2012_04_18_14_29_44-20120418_142944.jpg" data-original="originals/2012_04_18_14_29_44-20120418_142944.jpg" alt="2012_04_18_14_29_44-20120418_142944.jpg" data-description="2012_04_18_14_29_44-20120418_142944.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_11_57_42-20120419_115743.gif" data-large="pics/2012_04_19_11_57_42-20120419_115743.jpg" data-original="originals/2012_04_19_11_57_42-20120419_115743.jpg" alt="2012_04_19_11_57_42-20120419_115743.jpg" data-description="2012_04_19_11_57_42-20120419_115743.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_11_57_54-20120419_115754.gif" data-large="pics/2012_04_19_11_57_54-20120419_115754.jpg" data-original="originals/2012_04_19_11_57_54-20120419_115754.jpg" alt="2012_04_19_11_57_54-20120419_115754.jpg" data-description="2012_04_19_11_57_54-20120419_115754.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_11_59_11-20120419_115911.gif" data-large="pics/2012_04_19_11_59_11-20120419_115911.jpg" data-original="originals/2012_04_19_11_59_11-20120419_115911.jpg" alt="2012_04_19_11_59_11-20120419_115911.jpg" data-description="2012_04_19_11_59_11-20120419_115911.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_11_59_38-20120419_115939.gif" data-large="pics/2012_04_19_11_59_38-20120419_115939.jpg" data-original="originals/2012_04_19_11_59_38-20120419_115939.jpg" alt="2012_04_19_11_59_38-20120419_115939.jpg" data-description="2012_04_19_11_59_38-20120419_115939.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_12_02_28-20120419_120229.gif" data-large="pics/2012_04_19_12_02_28-20120419_120229.jpg" data-original="originals/2012_04_19_12_02_28-20120419_120229.jpg" alt="2012_04_19_12_02_28-20120419_120229.jpg" data-description="2012_04_19_12_02_28-20120419_120229.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_12_02_37-20120419_120237.gif" data-large="pics/2012_04_19_12_02_37-20120419_120237.jpg" data-original="originals/2012_04_19_12_02_37-20120419_120237.jpg" alt="2012_04_19_12_02_37-20120419_120237.jpg" data-description="2012_04_19_12_02_37-20120419_120237.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_13_25_35-20120419_132535.gif" data-large="pics/2012_04_19_13_25_35-20120419_132535.jpg" data-original="originals/2012_04_19_13_25_35-20120419_132535.jpg" alt="2012_04_19_13_25_35-20120419_132535.jpg" data-description="2012_04_19_13_25_35-20120419_132535.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_13_25_45-20120419_132546.gif" data-large="pics/2012_04_19_13_25_45-20120419_132546.jpg" data-original="originals/2012_04_19_13_25_45-20120419_132546.jpg" alt="2012_04_19_13_25_45-20120419_132546.jpg" data-description="2012_04_19_13_25_45-20120419_132546.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_13_26_03-20120419_132603.gif" data-large="pics/2012_04_19_13_26_03-20120419_132603.jpg" data-original="originals/2012_04_19_13_26_03-20120419_132603.jpg" alt="2012_04_19_13_26_03-20120419_132603.jpg" data-description="2012_04_19_13_26_03-20120419_132603.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/2012_04_19_13_26_59-20120419_132700.gif" data-large="pics/2012_04_19_13_26_59-20120419_132700.jpg" data-original="originals/2012_04_19_13_26_59-20120419_132700.jpg" alt="2012_04_19_13_26_59-20120419_132700.jpg" data-description="2012_04_19_13_26_59-20120419_132700.jpg"/></a></li>
+<li><a href="#"><img src="thumbs/-index.gif" data-large="pics/-index.html" data-original="originals/-index.html" alt="-index.html" data-description="-index.html"/></a></li>
+		</ul>
+	      </div>
+	    </div>
+	    <!-- End Elastislide Carousel Thumbnail Viewer -->
+	  </div><!-- rg-thumbs -->
+	</div><!-- rg-gallery -->
+	<p class="sub">&copy; Sebastien Campion </p>
+      </div><!-- content -->
+    </div><!-- container -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
+  </body>
+</html>
