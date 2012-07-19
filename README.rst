@@ -1,9 +1,8 @@
 Create a Gallery 
 ----------------
+download : 
+https://raw.github.com/scampion/mygallery/master/install.sh 
 
-git clone https://github.com/scampion/mygallery.git my_gallery
 
-cd mygallery 
-
-sh install.sh 
-
+run it in an empty directory:
+sh install.sh
