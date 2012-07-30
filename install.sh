@@ -1,17 +1,6 @@
 #!/bin/sh 
-git clone https://github.com/scampion/mygallery.git .
-
 read -p "Type the image directory path 'src' by default, followed by [ENTER]:" src
 src=${src:-src}
-
-read -p "Type the title of your gallery, followed by [ENTER]:" title
-title=${title:-Gallery}
-
-#read -p "Type the subtitle of your gallery, followed by [ENTER]:" subtitle
-#subtitle=${subtitle:-Photos}
-
-read -p "Type the copyright, followed by [ENTER]:" copyright
-copyright=${copyright:-me}
 
 mkdir thumbs pics originals
 
@@ -28,96 +17,124 @@ echo "Generating pics, please wait"
 mogrify  -strip -resize 500x500 -auto-orient -path pics originals/*
 
 cat > index.html <<'EOF'
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>GalleryTitle</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
-    <meta name="description" content="Responsive Image Gallery with jQuery" />
-    <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="../favicon.ico"> 
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
-    <noscript>
-      <style>
-	.es-carousel ul{
-	display:block;
-	}
-      </style>
-    </noscript>
-    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
-      <div class="rg-image-wrapper">
-	{{if itemsCount > 1}}
-	<div class="rg-image-nav">
-	  <a href="#" class="rg-image-nav-prev">Previous Image</a>
-	  <a href="#" class="rg-image-nav-next">Next Image</a>
-	</div>
-	{{/if}}
-	<div class="rg-image"></div>
-	<div class="rg-loading"></div>
-	<div class="rg-caption-wrapper">
-	  <div class="rg-caption" style="display:none;">
-	    <p></p>
-	  </div>
-	  <div class="rg-download"></div>
-	</div>
-      </div>
-    </script>
-  </head>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>GallerifficTitle</title>
+		<link rel="stylesheet" href="css/basic.css" type="text/css" />
+		<link rel="stylesheet" href="css/galleriffic-2.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+		<!-- We only want the thunbnails to display when javascript is disabled -->
+		<script type="text/javascript">
+			document.write('<style>.noscript { display: none; }</style>');
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="container">
+				<h1><a href="index.html">GallerifficTitle</a></h1>
+				<h2>GallerifficSubTitle</h2>
 
-
-  <body>
-    <div class="container">
-      <div class="header">
-      </div><!-- header -->
-      
-      <div class="content">
-	<h1>GalleryTitle</h1>
-	<div id="rg-gallery" class="rg-gallery">
-	  <div class="rg-thumbs">
-	    <!-- Elastislide Carousel Thumbnail Viewer -->
-	    <div class="es-carousel-wrapper">
-	      <div class="es-nav">
-		<span class="es-nav-prev">Previous</span>
-		<span class="es-nav-next">Next</span>
-	      </div>
-	      <div class="es-carousel">
-		<ul>
+				<!-- Start Advanced Gallery Html Containers -->
+				<div id="gallery" class="content">
+					<div id="controls" class="controls"></div>
+					<div class="slideshow-container">
+						<div id="loading" class="loader"></div>
+						<div id="slideshow" class="slideshow"></div>
+					</div>
+					<div id="caption" class="caption-container"></div>
+				</div>
+				<div id="thumbs" class="navigation">
+					<ul class="thumbs noscript">
 EOF
 
 for i in `ls -1 originals/* | sort` ;
 do  
     file=`basename $i`
     thumb=${file%\.*}.gif
-    echo "<li><a href=\"#\"><img src=\"thumbs/$thumb\" data-large=\"pics/$file\" data-original=\"$i\" alt=\"$file\" data-description=\"$file\"/></a></li>" >> index.html
+    echo $thumb 
+    echo "<li><a class=\"thumb\" name=\"leaf\" href=\"pics/$file\" title=\"\">" >> index.html
+    echo "<img src=\"thumbs/$thumb\" alt=\"\" /></a>" >> index.html
+    echo "<div class=\"caption\"><div class=\"download\"><a href=\"$i\">Download Original</a></div>" >> index.html
+    echo "<div class=\"image-title\">$file</div><div class=\"image-desc\"></div></div></li>" >> index.html 
 done ; 
 
 cat >> index.html <<'EOF'
-		</ul>
-	      </div>
-	    </div>
-	    <!-- End Elastislide Carousel Thumbnail Viewer -->
-	  </div><!-- rg-thumbs -->
-	</div><!-- rg-gallery -->
-	<p class="sub">&copy; copyright </p>
-      </div><!-- content -->
-    </div><!-- container -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.elastislide.js"></script>
-    <script type="text/javascript" src="js/gallery.js"></script>
-  </body>
+					</ul>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		<div id="footer">&copy; copyright</div>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				// We only want these styles applied when javascript is enabled
+				$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+				$('div.content').css('display', 'block');
+
+				// Initially set opacity on thumbs and add
+				// additional styling for hover effect on thumbs
+				var onMouseOutOpacity = 0.67;
+				$('#thumbs ul.thumbs li').opacityrollover({
+					mouseOutOpacity:   onMouseOutOpacity,
+					mouseOverOpacity:  1.0,
+					fadeSpeed:         'fast',
+					exemptionSelector: '.selected'
+				});
+				
+				// Initialize Advanced Galleriffic Gallery
+				var gallery = $('#thumbs').galleriffic({
+					delay:                     2500,
+					numThumbs:                 15,
+					preloadAhead:              10,
+					enableTopPager:            true,
+					enableBottomPager:         true,
+					maxPagesToShow:            7,
+					imageContainerSel:         '#slideshow',
+					controlsContainerSel:      '#controls',
+					captionContainerSel:       '#caption',
+					loadingContainerSel:       '#loading',
+					renderSSControls:          true,
+					renderNavControls:         true,
+					playLinkText:              'Play Slideshow',
+					pauseLinkText:             'Pause Slideshow',
+					prevLinkText:              '&lsaquo; Previous Photo',
+					nextLinkText:              'Next Photo &rsaquo;',
+					nextPageLinkText:          'Next &rsaquo;',
+					prevPageLinkText:          '&lsaquo; Prev',
+					enableHistory:             false,
+					autoStart:                 false,
+					syncTransitions:           true,
+					defaultTransitionDuration: 900,
+					onSlideChange:             function(prevIndex, nextIndex) {
+						// 'this' refers to the gallery, which is an extension of $('#thumbs')
+						this.find('ul.thumbs').children()
+							.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+							.eq(nextIndex).fadeTo('fast', 1.0);
+					},
+					onPageTransitionOut:       function(callback) {
+						this.fadeTo('fast', 0.0, callback);
+					},
+					onPageTransitionIn:        function() {
+						this.fadeTo('fast', 1.0);
+					}
+				});
+			});
+		</script>
+	</body>
 </html>
 EOF
 
-sed -i -e "s/GalleryTitle/$title/g" index.html
+read -p "Type the title of your gallery, followed by [ENTER]:" title
+title=${title:-Gallery}
+sed -i -e "s/GallerifficTitle/$title/g" index.html
+
+read -p "Type the subtitle of your gallery, followed by [ENTER]:" subtitle
+subtitle=${subtitle:-Photos}
+sed -i -e "s/GallerifficSubTitle/$subtitle/g" index.html
+
+read -p "Type the copyright, followed by [ENTER]:" copyright
+copyright=${copyright:-me}
 sed -i -e "s/copyright/$copyright/g" index.html
-
-
