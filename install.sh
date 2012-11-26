@@ -9,6 +9,7 @@ do
     echo "Copy and rename image : $i" 
     datetime=`identify -verbose "$i" | grep "exif:DateTime:" | awk -F\\  '{print $2"_"$3}' | sed s/:/_/g`
     cp $i originals/$datetime-`basename $i`
+    chmod a+r originals/$datetime-`basename $i`
 done ; 
 
 echo "Generating thumbnail, please wait"
